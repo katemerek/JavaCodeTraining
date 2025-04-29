@@ -11,6 +11,4 @@ public class SnapshotStringBuilder {
         System.out.println("О нет, меня хотят извлечь! На моем месте должен был быть объект из истории изменений");
         return savedStr;
     }
-
-
 }

@@ -21,7 +21,6 @@ public class CustomStringBuilder {
         StringBuilder example = new StringBuilder();
         example.append("Hello");
         System.out.println(example);
-       customStringBuilder.undo(customStringBuilder.save(example));
+        customStringBuilder.undo(customStringBuilder.save(example));
     }
-
 }
