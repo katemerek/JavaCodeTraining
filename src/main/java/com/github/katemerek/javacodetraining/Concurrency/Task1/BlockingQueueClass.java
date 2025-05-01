@@ -25,6 +25,7 @@ public class BlockingQueueClass {
             wait();
         }
         queue.offer(o);
+        notifyAll();
     }
 
     public synchronized void dequeue() throws InterruptedException {
@@ -32,6 +33,7 @@ public class BlockingQueueClass {
             wait();
         }
         queue.poll();
+        notifyAll();
     }
 
     public synchronized int size() {
