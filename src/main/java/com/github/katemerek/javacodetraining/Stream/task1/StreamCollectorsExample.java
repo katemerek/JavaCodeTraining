@@ -1,6 +1,4 @@
-package com.github.katemerek.javacodetraining.Stream;
-
-import org.apache.el.stream.Stream;
+package com.github.katemerek.javacodetraining.Stream.task1;
 
 import java.util.Comparator;
 import java.util.List;
@@ -26,11 +24,15 @@ public class StreamCollectorsExample {
                 new Order("Smartphone", 800.0),
                 new Order("Laptop", 1500.0),
                 new Order("Tablet", 500.0),
-                new Order("Smartphone", 900.0)
+                new Order("Smartphone", 900.0),
+                new Order("Headphones", 100.0)
         );
 
         orders.stream().collect(Collectors.groupingBy(Order::getProduct, Collectors.summingDouble(Order::getCost)))
-                .entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
-                .limit(3).forEach(e -> System.out.println(e.getKey() + " " + e.getValue()));
+                .entrySet()
+                .stream()
+                .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+                .limit(3)
+                .forEach(e -> System.out.println(e.getKey() + " " + e.getValue()));
     }
 }

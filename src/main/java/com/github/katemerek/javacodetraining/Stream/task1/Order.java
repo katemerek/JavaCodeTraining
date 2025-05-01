@@ -1,4 +1,4 @@
-package com.github.katemerek.javacodetraining.Stream;
+package com.github.katemerek.javacodetraining.Stream.task1;
 
 public class Order {
     private String product;
