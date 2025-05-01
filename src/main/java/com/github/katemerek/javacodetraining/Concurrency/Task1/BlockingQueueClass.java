@@ -1,4 +1,4 @@
-package com.github.katemerek.javacodetraining.Concurrency;
+package com.github.katemerek.javacodetraining.Concurrency.Task1;
 
 import lombok.Data;
 
@@ -17,7 +17,7 @@ import java.util.PriorityQueue;
 
 @Data
 public class BlockingQueueClass {
-    private final PriorityQueue<Object> queue;
+    private final PriorityQueue<Object> queue = new PriorityQueue<>();
     private final int capacity = 5;
 
     public synchronized void enqueue(Object o) throws InterruptedException {
@@ -25,7 +25,6 @@ public class BlockingQueueClass {
             wait();
         }
         queue.offer(o);
-
     }
 
     public synchronized void dequeue() throws InterruptedException {
